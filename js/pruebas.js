@@ -31,6 +31,8 @@ function probarValidarDescripcionRegalo() {
         "Validar descripcion no validó que la descripcion sea menor a 100 caracteres"
     );
 
+    console.assert(validarDescripcionRegalo("Esto. Es! una prueba") === "El campo descripcion solo acepta letras o numeros", "Validar descripcion no valido que la descripcion tenga solo letras o numeros")
+
     console.assert(validarDescripcionRegalo("Esto es una prueba") === "", "Validar descripcion fallo con una descripcion valida");
 }
 
