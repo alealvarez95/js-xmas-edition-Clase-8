@@ -36,3 +36,13 @@ function validarDescripcionRegalo(descripcionRegalo) {
         return "";
     }
 }
+
+function validarFormulario(event) {
+    const nombre = $formulario.nombre.value;
+    
+    console.log(validarNombre(nombre));
+
+    event.preventDefault();
+}
+
+$formulario.onsubmit = validarFormulario;
