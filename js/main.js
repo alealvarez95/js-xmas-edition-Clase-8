@@ -38,11 +38,21 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 function validarFormulario(event) {
-    const nombre = $formulario.nombre.value;
-    
-    console.log(validarNombre(nombre));
+    const errorNombre = validarNombre($formulario.nombre.value);
+
+    manejarErrores([errorNombre]);
 
     event.preventDefault();
+}
+
+function manejarErrores(errores) {
+    errorNombre = errores[0];
+
+    if (errorNombre) {
+        console.log(errorNombre);
+    } else {
+        console.log("No hay errores.");
+    }
 }
 
 $formulario.onsubmit = validarFormulario;
