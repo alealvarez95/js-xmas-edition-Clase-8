@@ -6,7 +6,9 @@ function probarValidarNombre() {
         "Validar nombre no validó que el nombre sea menor a 50 caracteres"
     );
 
-    console.assert(validarNombre("Prueba") === "", "Validar nombre fallo con un nombre valido")
+    console.assert(validarNombre("123456") === "El campo nombre solo acepta letras", "Validar nombre no valido que el nombre tenga solo letras");
+
+    console.assert(validarNombre("Prueba") === "", "Validar nombre fallo con un nombre valido");
 }
 
 probarValidarNombre();
@@ -14,7 +16,7 @@ probarValidarNombre();
 function probarValidarCiudad() {
     console.assert(validarCiudad("") === "Este campo debe tener al menos 1 caracter", "Validar ciudad no validó que el nombre no sea vacío");
 
-    console.assert(validarCiudad("Bs. As.") === "", "Validar ciudad fallo con una ciudad valida")
+    console.assert(validarCiudad("Bs. As.") === "", "Validar ciudad fallo con una ciudad valida");
 }
 
 probarValidarCiudad();
@@ -29,7 +31,7 @@ function probarValidarDescripcionRegalo() {
         "Validar descripcion no validó que la descripcion sea menor a 100 caracteres"
     );
 
-    console.assert(validarDescripcionRegalo("Esto es una prueba") === "", "Validar descripcion fallo con una descripcion valida")
+    console.assert(validarDescripcionRegalo("Esto es una prueba") === "", "Validar descripcion fallo con una descripcion valida");
 }
 
 probarValidarDescripcionRegalo();
