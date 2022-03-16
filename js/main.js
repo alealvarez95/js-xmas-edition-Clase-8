@@ -38,20 +38,46 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 function validarFormulario(event) {
-    const errorNombre = validarNombre($formulario.nombre.value);
+    const nombre = $formulario.nombre.value;
+    const ciudad = $formulario.ciudad.value;
+    const descripcionRegalo = $formulario["descripcion-regalo"].value;
 
-    manejarErrores([errorNombre]);
+    const validacionNombre = validarNombre(nombre);
+    const validacionCiudad = validarCiudad(ciudad);
+    const validacionDescripcionRegalo = validarNombre(descripcionRegalo);
+
+    const errores = {
+        nombre: validacionNombre,
+        ciudad: validacionCiudad,
+        descripcionRegalo: validacionDescripcionRegalo,
+    };
+
+    manejarErrores(errores);
 
     event.preventDefault();
 }
 
 function manejarErrores(errores) {
-    errorNombre = errores[0];
+    errorNombre = errores.nombre;
+    errorCiudad = errores.ciudad;
+    errorDescripcionRegalo = errores.descripcionRegalo;
 
     if (errorNombre) {
-        console.log(errorNombre);
+        $formulario.nombre.className = "error";
     } else {
-        console.log("No hay errores.");
+        $formulario.nombre.className = "";
+    }
+
+    if (errorCiudad) {
+        $formulario.ciudad.className = "error";
+    } else {
+        $formulario.ciudad.className = "";
+    }
+
+    if (errorDescripcionRegalo) {
+        $formulario["descripcion-regalo"].className = "error";
+    } else {
+        $formulario["descripcion-regalo"].className = "";
     }
 }
 
