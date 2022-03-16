@@ -19,7 +19,7 @@ function validarNombre(nombre) {
 
 function validarCiudad(ciudad) {
     if (ciudad.length === 0) {
-        return "Este campo debe tener al menos 1 caracter";
+        return "Se debe seleccionar una ciudad de la lista";
     } else {
         return "";
     }
