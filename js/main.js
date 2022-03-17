@@ -49,7 +49,7 @@ function validarFormulario(event) {
     const errores = {
         nombre: validacionNombre,
         ciudad: validacionCiudad,
-        descripcionRegalo: validacionDescripcionRegalo,
+        "descripcion-regalo": validacionDescripcionRegalo,
     };
 
     manejarErrores(errores);
@@ -58,27 +58,21 @@ function validarFormulario(event) {
 }
 
 function manejarErrores(errores) {
-    errorNombre = errores.nombre;
-    errorCiudad = errores.ciudad;
-    errorDescripcionRegalo = errores.descripcionRegalo;
+    const keys = Object.keys(errores);
+    let cantidadErrores = 0;
 
-    if (errorNombre) {
-        $formulario.nombre.className = "error";
-    } else {
-        $formulario.nombre.className = "";
-    }
+    keys.forEach(function (key) {
+        const error = errores[key];
 
-    if (errorCiudad) {
-        $formulario.ciudad.className = "error";
-    } else {
-        $formulario.ciudad.className = "";
-    }
+        if (error) {
+            $formulario[key].className = "error";
+            cantidadErrores++;
+        } else {
+            $formulario[key].className = "";
+        }
+    });
 
-    if (errorDescripcionRegalo) {
-        $formulario["descripcion-regalo"].className = "error";
-    } else {
-        $formulario["descripcion-regalo"].className = "";
-    }
+    return cantidadErrores;
 }
 
 $formulario.onsubmit = validarFormulario;
