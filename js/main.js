@@ -7,11 +7,11 @@ const descripcionRegalo = $formulario["descripcion-regalo"].value;
 
 function validarNombre(nombre) {
     if (nombre.length === 0) {
-        return "Este campo debe tener al menos 1 caracter";
+        return `El campo "Nombre" debe tener al menos 1 caracter`;
     } else if (nombre.length >= 50) {
-        return "Este campo debe tener menos de 50 caracteres";
+        return `El campo "Nombre" debe tener menos de 50 caracteres`;
     } else if (!/^[a-z]+$/i.test(nombre)) {
-        return "El campo nombre solo acepta letras";
+        return `El campo "Nombre" solo acepta letras`;
     } else {
         return "";
     }
@@ -27,11 +27,11 @@ function validarCiudad(ciudad) {
 
 function validarDescripcionRegalo(descripcionRegalo) {
     if (descripcionRegalo.length === 0) {
-        return "Este campo debe tener al menos 1 caracter";
+        return `El campo "Regalo" debe tener al menos 1 caracter`;
     } else if (descripcionRegalo.length >= 100) {
-        return "Este campo debe tener menos de 100 caracteres";
+        return `El campo "Regalo" debe tener menos de 100 caracteres`;
     } else if (!/^[A-z0-9\s]+$/.test(descripcionRegalo)) {
-        return "El campo descripcion solo acepta letras o numeros";
+        return `El campo "Regalo" solo acepta letras o numeros`;
     } else {
         return "";
     }
