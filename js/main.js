@@ -60,12 +60,20 @@ function validarFormulario(event) {
 function manejarErrores(errores) {
     const keys = Object.keys(errores);
     let cantidadErrores = 0;
+    const $errores = document.querySelector("#errores");
+
+    while ($errores.firstChild) {
+        $errores.removeChild($errores.lastChild);
+    }
 
     keys.forEach(function (key) {
         const error = errores[key];
 
         if (error) {
             $formulario[key].className = "error";
+            const $error = document.createElement("li");
+            $error.innerText = error;
+            $errores.appendChild($error);
             cantidadErrores++;
         } else {
             $formulario[key].className = "";
