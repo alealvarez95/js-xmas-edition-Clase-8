@@ -44,7 +44,7 @@ function validarFormulario(event) {
 
     const validacionNombre = validarNombre(nombre);
     const validacionCiudad = validarCiudad(ciudad);
-    const validacionDescripcionRegalo = validarNombre(descripcionRegalo);
+    const validacionDescripcionRegalo = validarDescripcionRegalo(descripcionRegalo);
 
     const errores = {
         nombre: validacionNombre,
