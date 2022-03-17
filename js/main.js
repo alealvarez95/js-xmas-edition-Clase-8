@@ -52,7 +52,12 @@ function validarFormulario(event) {
         "descripcion-regalo": validacionDescripcionRegalo,
     };
 
-    manejarErrores(errores);
+    const esExito = manejarErrores(errores) === 0;
+
+    if (esExito) {
+        document.querySelector("#exito").className = "";
+        $formulario.className = "oculto";
+    }
 
     event.preventDefault();
 }
