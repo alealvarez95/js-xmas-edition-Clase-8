@@ -54,12 +54,14 @@ function validarFormulario(event) {
 
     const esExito = manejarErrores(errores) === 0;
 
+    const TIEMPO_REDIRECCION_EN_MS = 5000;
+
     if (esExito) {
         document.querySelector("#exito").className = "";
         $formulario.className = "oculto";
         setTimeout(function () {
             window.location.href = "wishlist.html";
-        }, 5000);
+        }, TIEMPO_REDIRECCION_EN_MS);
     }
 
     event.preventDefault();
